@@ -1,0 +1,17 @@
+Create a Kubernetes new context with a user On minikube:
+===============================================
+
+
+openssl genrsa -out bhumi.key 2048
+
+openssl req -new -key bhumi.key -out bhumi.csr -subj "/CN=bhumi/O=minikube"
+
+#openssl x509 -req -in bhumi.csr -CA ~/.minikube/ca.crt -CAkey ~/.minikube/ca.key -CAcreateserial -out bhumi.crt -days 365
+
+openssl x509 -req -in bhumi.csr -CA \Users\sanju\.minikube\ca.crt -CAkey \Users\sanju\.minikube\ca.key -CAcreateserial -out bhumi.crt -days 365
+
+kubectl config set-context bhumi-context --cluster=minikube --user=bhumi
+
+kubectl config set-credentials bhumi --client-certificate=bhumi.crt --client-key=bhumi.key
+
+kubectl config use-context bhumi-context
