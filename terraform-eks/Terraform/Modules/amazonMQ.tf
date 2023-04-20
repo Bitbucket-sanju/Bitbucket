@@ -1,13 +1,12 @@
-resource "aws_mq_broker" "mq_broker" {
-  name            = "my-mq-broker"
-  engine_type     = "ActiveMQ"
-  engine_version  = "5.15.14"
-  deployment_mode = "SINGLE_INSTANCE"
+resource "aws_mq_broker" "mqbroker" {
+  broker_name = "broker"
 
-  users = [
-    {
-      username = "admin"
-      password = "admin"
-    }
-  ]
+  engine_type        = "ActiveMQ"
+  engine_version     = "5.15.9"
+  host_instance_type = "mq.t2.micro"
+
+  user {
+    username = "admin"
+    password = "admin"
+  }
 }
