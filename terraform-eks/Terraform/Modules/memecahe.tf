@@ -8,6 +8,6 @@ resource "aws_elasticache_cluster" "cache" {
   engine               = "memcached"
   node_type            = "cache.m4.large"
   num_cache_nodes      = 2
-  parameter_group_name = "memecache-1"
+  parameter_group_name = "default.memcached1.6"
   subnet_group_name    = aws_elasticache_subnet_group.cache-subnet.name
 }
