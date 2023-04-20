@@ -7,6 +7,6 @@ resource "aws_mq_broker" "mqbroker" {
 
   user {
     username = "admin"
-    password = "admin"
+    password = "admin123456789"
   }
 }
