@@ -6,7 +6,7 @@ resource "aws_db_instance" "example" {
 
   # Database credentials
   username = "admin"
-  password = "sanju8796"
+  password = "admin"
 
   # Backup configuration
   backup_retention_period = 7
