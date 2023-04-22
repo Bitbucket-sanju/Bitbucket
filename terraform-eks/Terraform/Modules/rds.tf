@@ -13,5 +13,9 @@ resource "aws_db_instance" "example" {
   backup_retention_period = 7
   backup_window           = "02:00-03:00"
 
+  tags {
+    Name: "eksdb"
+  }
+
 }
 
