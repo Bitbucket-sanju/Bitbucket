@@ -1,8 +1,9 @@
 resource "aws_db_instance" "example" {
-  engine            = "mysql"
-  instance_class    = "db.t2.micro"
-  allocated_storage = 10
-  name              = "eksdb"
+  engine              = "mysql"
+  instance_class      = "db.t2.micro"
+  allocated_storage   = 10
+  name                = "eksdb"
+  skip_final_snapshot = true
 
   # Database credentials
   username = "admin"
